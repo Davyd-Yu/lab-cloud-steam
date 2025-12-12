@@ -16,3 +16,11 @@ class GameController:
         if game:
             return jsonify(game)
         return jsonify({"error": "Not found"}), 404
+
+    def update_game(self, game_id):
+        service.update(game_id, request.json)
+        return jsonify({"message": "Game updated"})
+
+    def delete_game(self, game_id):
+        service.delete(game_id)
+        return jsonify({"message": "Game deleted"})

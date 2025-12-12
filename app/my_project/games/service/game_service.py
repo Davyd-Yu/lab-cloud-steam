@@ -9,3 +9,9 @@ class GameService:
 
     def create(self, data):
         self.dao.create_game(data['title'], data['price'])
+
+    def update(self, game_id, data):
+        self.dao.update_game(game_id, data['price'])
+
+    def delete(self, game_id):
+        self.dao.delete_game(game_id)

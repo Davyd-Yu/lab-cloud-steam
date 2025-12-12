@@ -65,3 +65,48 @@ def get_details(game_id):
         description: Гру не знайдено
     """
     return controller.get_game_details(game_id)
+
+@games_bp.route('/games/<int:game_id>', methods=['PUT'])
+def update_game(game_id):
+    """
+    Оновити ціну гри
+    ---
+    tags:
+      - Games
+    parameters:
+      - name: game_id
+        in: path
+        type: integer
+        required: true
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: object
+          properties:
+            price:
+              type: number
+              example: 19.99
+    responses:
+      200:
+        description: Ціну оновлено
+    """
+    return controller.update_game(game_id)
+
+@games_bp.route('/games/<int:game_id>', methods=['DELETE'])
+def delete_game(game_id):
+    """
+    Видалити гру
+    ---
+    tags:
+      - Games
+    parameters:
+      - name: game_id
+        in: path
+        type: integer
+        required: true
+    responses:
+      200:
+        description: Гру видалено
+    """
+    return controller.delete_game(game_id)

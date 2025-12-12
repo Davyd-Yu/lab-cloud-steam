@@ -18,3 +18,19 @@ class GameDAO:
         conn.commit()
         cursor.close()
         conn.close()
+
+    def update_game(self, game_id, price):
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("UPDATE games SET price = %s WHERE id = %s", (price, game_id))
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+    def delete_game(self, game_id):
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM games WHERE id = %s", (game_id,))
+        conn.commit()
+        cursor.close()
+        conn.close()
