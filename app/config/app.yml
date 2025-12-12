@@ -1,4 +1,5 @@
-key_vault_url: "https://ТУТ-БУДЕ-ТВІЙ-URL.vault.azure.net/"
+key_vault_url: https://kv-steam-lab-01.vault.azure.net/
+
 secret_names:
   user: "DbUser"
   password: "DbPassword"
