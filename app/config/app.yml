@@ -1,0 +1,5 @@
+key_vault_url: "https://ТУТ-БУДЕ-ТВІЙ-URL.vault.azure.net/"
+secret_names:
+  user: "DbUser"
+  password: "DbPassword"
+  host: "DbHost"
